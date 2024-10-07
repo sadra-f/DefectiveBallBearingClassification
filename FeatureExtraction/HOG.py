@@ -1,5 +1,5 @@
 import numpy as np
-from skimage import io, color
+from skimage import color
 from skimage.feature import hog
 
 def hog_extraction(image, visualize=False):

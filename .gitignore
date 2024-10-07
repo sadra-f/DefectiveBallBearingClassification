@@ -1,1 +1,4 @@
 venv/
+casting_data/
+casting_512x512/
+__pycache__/

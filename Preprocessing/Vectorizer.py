@@ -6,16 +6,13 @@ import numpy as np
 
 
 
-def vectorize_dataset(dataset_path, limit:int):
-    file_path_list = files_in_path(dataset_path, DATASET_FILE_PATTERN)
+def vectorize_dataset(img_list):
     res = []
-    for path in file_path_list[:limit]:
-        res.append(vectorize(path))
+    for img in img_list:
+        res.append(vectorize_img(img))
 
     return res
 
 
-def vectorize(data_path):
-    image = io.imread(data_path)
-    res = hog_extraction(image)
-    return res
+def vectorize_img(img):
+    return hog_extraction(img)
