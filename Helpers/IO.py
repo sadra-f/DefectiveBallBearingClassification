@@ -11,8 +11,12 @@ def files_in_path(path:Path, pattern:str):
     return res
 
 
-def write_array(data, path):
-    np.save(str(path) + "\\" + path.name[:-5] + ".npy", data)
+def write_array(data, path, name=None):
+    if name is None:
+        np.save(str(path) + "\\" + path.name[:-5] + ".npy", data)
+        return
+    
+    np.save(str(path) + "\\" + name + ".npy", data)
 
 def read_array(path):
     return np.load(path)
