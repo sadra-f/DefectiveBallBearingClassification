@@ -27,10 +27,10 @@ def main():
     classifier.change_models(ok_model, def_model)
     tests = read_imgs_in_path(test_ok_path)
     tests2 = read_imgs_in_path(test_def_path)
-    for val in tests:
-        tests2.append(val)
-    res = classifier.predict(tests2)
-    print(res)
+    ok_test_res = classifier.predict(tests)
+    def_test_res = classifier.predict(tests2)
+    print(ok_test_res)
+    print(def_test_res)
 
 if __name__ == '__main__':
     main()
