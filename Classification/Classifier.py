@@ -1,5 +1,5 @@
 from .DistMeasure import cosine_sim
-from Preprocessing.Vectorizer import vectorize_dataset
+from FeatureExtraction.Vectorizer import vectorize_dataset
 from Clustering.CKMeans import cluster_vectors, mean_of_clusters
 
 class HOGBasedClassifier:
