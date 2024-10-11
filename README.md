@@ -21,9 +21,9 @@
 8- choosing the mean vector to which the test image vector is most similar to.
 
 ### results:
-|     *     |    OK      |  Defective  |
-|   :---:   |    :---:   |     :---:   |
-|Accuracy   |     0.84     |     0.84    |
-|Precision  |      1.0     |     0.75    |
-|recall     |      0.7     |      1      |
-|f1-score   |     0.823    |    0.875    |
+|   metric  |     value     |
+|   :---:   |    :---:      |
+|Accuracy   |     0.78      |
+|Precision  |      0.83     |
+|recall     |      0.66     |
+|f1-score   |     0.732     |
