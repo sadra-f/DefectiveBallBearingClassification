@@ -1,7 +1,9 @@
-### Simple Algorithm for detecting defective ball bearing images using [this](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product) dataset
+#### Simple Algorithm for detecting defective ball bearing images using [this](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product) real life industrial dataset
 
-
-## steps : 
+### dataset sample
+![plot](Figure_def.png)
+![plot](Figure_ok.png)
+### steps : 
 1- reading the image files from the dataset (ok or def)
 2- turning the images into black and white
 3 - vectorizing each image using the Histogram of Oriented Gradients(HOG)
@@ -11,7 +13,7 @@
 7- comparing the vectorized version of the test images to each of the meaned vectors calculating their cosine similarity.
 8- choosing the mean vector to which the test image vector is most similar to.
 
-## results:
+### results:
 |     *     |    OK      |  Defective  |
 |   :---:   |    :---:   |     :---:   |
 |Accuracy   |     0.84     |     0.84    |
