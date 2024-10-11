@@ -5,6 +5,9 @@ from skimage import io
 import numpy as np
 
 
+def vectorize_test_dataset(img_list):
+    for img in img_list:
+        img.img = vectorize_img(img.img)
 
 def vectorize_dataset(img_list):
     res = []

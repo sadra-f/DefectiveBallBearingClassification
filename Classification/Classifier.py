@@ -1,5 +1,5 @@
 from .DistMeasure import cosine_sim
-from FeatureExtraction.Vectorizer import vectorize_dataset
+from FeatureExtraction.Vectorizer import vectorize_dataset, vectorize_test_dataset
 from Clustering.CKMeans import cluster_vectors, mean_of_clusters
 
 class HOGBasedClassifier:
@@ -21,18 +21,17 @@ class HOGBasedClassifier:
         self.def_model = def_model
 
     def predict(self, test_imgs:list):
-        test = vectorize_dataset(test_imgs)
-        predictions = []
-        for vec in test:
+        vectorize_test_dataset(test_imgs)
+        for tst in test_imgs:
             max_def = 0
             max_ok = 0
             for final in self.def_model:
-                loc_res = cosine_sim(vec, final)
+                loc_res = cosine_sim(tst.img, final)
                 if loc_res > max_def:
                     max_def = loc_res
             for final in self.ok_model:
-                loc_res = cosine_sim(vec, final)
+                loc_res = cosine_sim(tst.img, final)
                 if loc_res > max_ok:
                     max_ok = loc_res
-            predictions.append("def" if max_def > max_ok else "ok")
-        return predictions
+            tst.pred = "def" if max_def > max_ok else "ok"
+        return test_imgs
