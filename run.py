@@ -1,7 +1,7 @@
 from Classification.Classifier import HOGBasedClassifier as HBC
 from statics.Paths import *
 from Helpers.IO import read_array, read_imgs_in_path
-from Helpers.TestModel import TM
+from Helpers.TDM import TDM
 from Evaluation.Evaluator import Single_class_Evaluator as Eval
 # from Preprocessing.Vectorizer import vectorize_dataset
 # from Clustering.CKMeans import cluster_vectors, mean_of_clusters
@@ -26,8 +26,8 @@ def main():
     ok_model = read_array(ok_model_path)
     def_model = read_array(def_model_path)
     classifier.change_models(ok_model, def_model)
-    tests = [TM("ok", i, None) for i in read_imgs_in_path(test_ok_path)]
-    tests.extend([TM("def", i, None) for i in read_imgs_in_path(test_def_path)])
+    tests = [TDM("ok", i, None) for i in read_imgs_in_path(test_ok_path)]
+    tests.extend([TDM("def", i, None) for i in read_imgs_in_path(test_def_path)])
     test_res = classifier.predict(tests)
     evaluation = Eval().evaluate(test_res)
     print(evaluation)
